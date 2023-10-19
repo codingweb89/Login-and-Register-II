@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f2f2f2;
+    font-family: "Poppins", sans-serif;
+    background-image: url(hans.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    top: 30px;
+    z-index: 10;
+    color: #fff;
+}
+
+.links ul {
+    list-style: none;
+}
+
+.links ul li {
+    position: relative;
+    display: inline;
+    margin: 0 20px;
+}
+
+.links ul li::before {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    height: 2px;
+    border-radius: 10px;
+    background: #fff;
+    width: 0;
+    transition: 0.5s;
+}
+
+.links ul li:hover::before {
+    width: 100%;
+}
+
+.links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.login button {
+    padding: 10px 25px;
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.login button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.all_forms {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.login_form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    width: 800px;
+    height: 400px;
+    display: flex;
+}
+
+.login_message {
+    position: relative;
+    width: 400px;
+    background-image: url(lap2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* filter: grayscale(100); */
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.blend {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .9);
+    /* mix-blend-mode: overlay; */
+}
+
+.login_message div:nth-child(2) {
+    position: relative;
+}
+
+.login_message div p {
+    width: 350px;
+    margin: 0 auto;
+    line-height: 26px;
+}
+
+.login_inputs {
+    width: 400px;
+    background: #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.exit {
+    position: relative;
+    float: right;
+    margin: 10px;
+    z-index: 1;
+}
+
+.exit img {
+    width: 15px;
+    cursor: pointer;
+}
+
+.login_inputs form {
+    position: relative;
+    top: 10px;
+    padding: 20px;
+}
+
+.login_inputs form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login_inputs form div {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.login_inputs form div input {
+    width: 100%;
+    padding: 15px 0;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .3);
+}
+
+.login_inputs form div label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: rgba(0, 0, 0, .8);
+}
+
+.login_inputs form div input:focus + label {
+    top: 10px;
+    font-size: 10px;
+}
+
+.login_inputs form .div_p {
+    margin-bottom: 15px;
+}
+
+.login_inputs form div input[type=submit] {
+    background: #20b2aa;
+    color: #fff;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.login_inputs form div a {
+    text-decoration: none;
+    color: #20b2aa;
+}
+
+.footer {
+    text-align: center;
+}
+
+.show_login {
+    animation: rotate 0.5s linear 1;
+    transform: translate(-50%,-50%)  rotate(0) scale(1);
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%,-50%)   rotate(360deg) scale(0);
+    }100% {
+        transform: translate(-50%,-50%)  rotate(0) scale(1);
+    }
+}
+
+.signup_form {
+    transform: translate(-50%,-50%)  rotate(0) scale(0);
+    transition: 1s;
+}
+
+.login_message2 {
+    background-image: url(lap1.jpg);
+}

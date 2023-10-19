@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo"><h1>Logo</h1></div>
+    <div class="links">
+        <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">Career</a></li>
+            <li><a href="">Jobs</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </div>
+    <div class="login">
+        <button type="button" class="logins">Login</button>
+    </div>
+</div>
+
+
+<div class="all_forms">
+    <div class="cover">
+        <div class="login_form">
+            <div class="login_message">
+                <div class="blend"></div>
+                <div>
+                    <h1>Welcome Back</h1>
+                    <br>
+                    <p>Please log in using your personal information to stay connected with us.</p>
+                </div>
+            </div>
+            <div class="login_inputs">
+                <div class="exit"><img src="close.png" alt="" class="exit_btn"></div>
+                <form>
+                    <h1>LOGIN</h1>
+                     <div>
+                        <input type="email" class="all_inputs">
+                        <label>Email</label>
+                     </div>
+                     <div class="div_p">
+                        <input type="password" class="all_inputs">
+                        <label>Password</label>
+                     </div>
+                     <div><a href="">Forgot password?</a></div>
+                     <div>
+                        <input type="submit" value="Login">
+                     </div>
+                     <div class="footer">
+                        <span>Don't have an account? <a href="" class="signups">Signup</a></span>
+                     </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="login_form signup_form">
+            <div class="login_message login_message2">
+                <div class="blend"></div>
+                <div>
+                    <h1>Create Account</h1>
+                    <br>
+                    <p>To become a part of our community, please sign up using your personal information.</p>
+                </div>
+            </div>
+            <div class="login_inputs">
+                <div class="exit"><img src="close.png" alt="" class="exit_btn"></div>
+                <form>
+                    <h1>SignUp</h1>
+                     <div>
+                        <input type="email">
+                        <label>Email</label>
+                     </div>
+                     <div class="div_p">
+                        <input type="password">
+                        <label>Password</label>
+                     </div>
+                     <!-- <div><a href="">Forgot password?</a></div> -->
+                     <div>
+                        <input type="submit" value="Sign Up">
+                     </div>
+                     <div class="footer">
+                        <span>Already have an account? <a href="" class="logins">LogIn</a></span>
+                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+/
+
+    
+
+<script>
+    const logins = document.querySelectorAll(".logins");
+    const cover = document.querySelector(".cover");
+    const loginForm = document.querySelector(".login_form");
+    const header = document.querySelector("header")
+
+    logins.forEach(log => {
+        log.addEventListener("click", e => {
+            e.preventDefault();
+            loginForm.classList.add("show_login");
+
+            cover.style.backdropFilter = "blur(3px)";
+            cover.style.zIndex = "14";
+
+            //after your run login finish
+            signupForm.style.transform = "translate(-50%,-50%)  rotate(0) scale(0)";
+
+        })
+    })
+
+    const signups = document.querySelectorAll(".signups");
+    const signupForm = document.querySelector(".signup_form");
+    signups.forEach(sign => {
+        sign.addEventListener("click", e => {
+            e.preventDefault();
+            loginForm.classList.remove("show_login");
+
+            signupForm.style.transform = "translate(-50%,-50%)  rotate(0) scale(1)";
+        })
+    })
+
+
+
+    const all_inputs = document.querySelectorAll(".all_inputs");
+    all_inputs.forEach(ini => {
+        ini.addEventListener("focusout", e => {
+            if(e.target.value !== "") {
+                let parent = e.currentTarget.parentElement;
+                let label = parent.querySelector("label")
+                label.style.top = "10px";
+                label.style.fontSize = "10px";
+            }
+        })
+    })
+
+
+    const exitBtn = document.querySelectorAll(".exit_btn");
+    exitBtn.forEach(close => {
+        close.addEventListener("click", e => {
+            cover.style.backdropFilter = "none";
+
+            cover.style.zIndex = "0";
+
+            loginForm.classList.remove("show_login");
+
+            signupForm.style.transform = "translate(-50%,-50%)  rotate(0) scale(0)";
+        })
+    })
+
+</script>
+
+
+</body>
+</html>
